@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { noteData } from "./FireBase";
+
+import Header from './components/Header';
+import NoteList from './components/NoteList';
+import NoteForm from './components/NoteForm';
 
 class App extends Component {
   render() {
+    console.log(noteData.once('value').then(snap => console.log(snap.val())))
+    // noteData.once('value')
+    // .then((snap) => {
+    //   console.log(snap.val())
+    // }).catch(err => console.log(err));
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header />
+        <div className="container">
+          <div className="row">
+            <NoteList />
+            <NoteForm />
+          </div>
+        </div>
       </div>
     );
   }
