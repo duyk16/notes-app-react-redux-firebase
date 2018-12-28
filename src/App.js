@@ -7,7 +7,7 @@ import NoteForm from './components/NoteForm';
 
 class App extends Component {
   render() {
-    console.log(noteData.once('value').then(snap => console.log(snap.val())))
+    // console.log(noteData.once('value').then(snap => console.log(snap.val())))
     // noteData.once('value')
     // .then((snap) => {
     //   console.log(snap.val())

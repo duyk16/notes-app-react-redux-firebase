@@ -12,7 +12,7 @@ const config = {
 }
 firebase.initializeApp(config);
 
-export const noteData = firebase.database().ref('NotesData/note1');
+export const noteData = firebase.database().ref('NotesData');
 
 // var data = firebase.database().ref('NotesData/note2');
 
